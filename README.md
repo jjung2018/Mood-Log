@@ -22,7 +22,7 @@ Language - Python 3.9
 
 ## Live Demo
 You can try the deployed version here:  
-[Mood Logging App] - https://mood-log-duuvhpoq4e4xpa7jcsgdvn.streamlit.app/
+https://mood-log-duuvhpoq4e4xpa7jcsgdvn.streamlit.app/
 
 The app uses a private Google Sheet as its backing data store.
 
