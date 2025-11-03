@@ -5,6 +5,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime, date
 import random
+import os, json
 
 # Connect to Google Sheets
 SCOPE = [
@@ -12,11 +13,14 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive",
 ]
 
-CREDS = ServiceAccountCredentials.from_json_keyfile_name(
-    "mood-queue-477022-12a64ab5b098.json", SCOPE
-)
-CLIENT = gspread.authorize(CREDS)
-SHEET = CLIENT.open("Mood Log").sheet1 
+# Crendentials to deploy & get the server - Use Streamlit secrets instead of JSON file
+if "GOOGLE_CREDENTIALS" in os.environ:
+    creds_dict = json.loads(os.environ["GOOGLE_CREDENTIALS"])
+    CREDS = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, SCOPE)
+    CLIENT = gspread.authorize(CREDS)
+    SHEET = CLIENT.open("Mood Log").sheet1
+else:
+    st.error("Missing Google credentials. Add them to Streamlit Secrets.")
 
 headers = SHEET.row_values(1)
 if headers != ["timestamp", "mood", "note"]:
