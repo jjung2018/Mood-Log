@@ -19,8 +19,6 @@ if "GOOGLE_CREDENTIALS" in os.environ:
     CREDS = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, SCOPE)
     CLIENT = gspread.authorize(CREDS)
     SHEET = CLIENT.open("Mood Log").sheet1
-else:
-    st.error("Missing Google credentials. Add them to Streamlit Secrets.")
 
 headers = SHEET.row_values(1)
 if headers != ["timestamp", "mood", "note"]:
