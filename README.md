@@ -13,8 +13,11 @@ Each time a client logs how they are feeling (happy, frustrated, confused, excit
 
 ## Built with
 App Framework - [Streamlit](https://streamlit.io) 
-Visualization - [Plotly Express](https://plotly.com/python/plotly-express/) |
+
+Visualization - [Plotly Express](https://plotly.com/python/plotly-express/) 
+
 Data Storage - Google Sheets
+
 Language - Python 3.9 
 
 ## Live Demo
