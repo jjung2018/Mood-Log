@@ -1,9 +1,3 @@
-# ==========================================================
-#  Queue Pulse Tracker ⚡
-#  Built by Jiwon Jung
-#  A lightweight Streamlit app to log and visualize team mood
-# ==========================================================
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
