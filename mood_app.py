@@ -25,7 +25,7 @@ if headers != ["timestamp", "mood", "note"]:
     SHEET.insert_row(["timestamp", "mood", "note"], 1)
 
 # Streamlit App
-st.set_page_config(page_title="Mood Tracker", page_icon="⚡", layout="centered")
+st.set_page_config(page_title="Mood Tracker", layout="centered")
 st.title("Mood Tracker")
 st.caption("Track how you're feeling today.")
 
